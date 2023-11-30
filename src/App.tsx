@@ -25,7 +25,7 @@ const queryClient = new QueryClient()
     return (
       <QueryClientProvider client={queryClient} >
         <div className='app'>
-            <Button onClick={handleGridView}>
+            <Button data-cy="showBtn" onClick={handleGridView}>
                 {showGrid ? "Close Grid" : "Show Grid"}
             </Button>
             {showGrid &&  <GridScreen  />}
