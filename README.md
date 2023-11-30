@@ -11,3 +11,4 @@
 * Zustand
 * react-query
 * cypress
+* react-spinners
