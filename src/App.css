@@ -1,0 +1,15 @@
+.app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background: #313131;
+}
+
+.logo {
+    width: 24px;
+    height: 24px;
+}
