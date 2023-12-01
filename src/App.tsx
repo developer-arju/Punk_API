@@ -1,39 +1,21 @@
+import { FC } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+import LandingPage from "./page/LandingPage";
+import "@progress/kendo-theme-default/dist/all.css";
+import "./App.css";
 
-import { useState } from 'react';
-import {
-  QueryClient,
-  QueryClientProvider
-} from 'react-query'
-import '@progress/kendo-theme-default/dist/all.css';
-import "./App.css"
+const queryClient = new QueryClient();
 
-import GridScreen from './components/GridScreen';
-import { Button } from "@progress/kendo-react-buttons";
+const App: FC = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <div id="app">
+        <LandingPage />
+      </div>
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+    </QueryClientProvider>
+  );
+};
 
-const queryClient = new QueryClient()
-
-
-  
-  function App() {
-    const [showGrid, setShowGrid] = useState(false)
-
-    const handleGridView = () => {
-      setShowGrid((prev: boolean) => !prev)
-    }
-
-
-    return (
-      <QueryClientProvider client={queryClient} >
-        <div className='app'>
-            <Button data-cy="showBtn" onClick={handleGridView}>
-                {showGrid ? "Close Grid" : "Show Grid"}
-            </Button>
-            {showGrid &&  <GridScreen  />}
-        </div>
-      </QueryClientProvider>
-    )
-  }
-  
-  export default App
-  
-  
+export default App;

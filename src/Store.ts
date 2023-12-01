@@ -1,13 +1,17 @@
 import { create } from 'zustand'
 
-interface BearState {
-  bears: [] | undefined,
-  setBears: (newBears: []) => void
+interface BeerState {
+  beers: [] | undefined,
+  totalPages: number | undefined,
+  setBeers: (newBears: []) => void,
+  setPageCount: (total: number) => void,
 }
   
-  const useStore = create<BearState>((set) => ({
-    bears: [],
-    setBears: (newBears: []) => set(() => ({ bears: newBears })),
+  const useStore = create<BeerState>((set) => ({
+    beers: [],
+    totalPages: undefined,
+    setBeers: (newBeers: []) => set(() => ({ beers: newBeers })),
+    setPageCount: (total: number) => set(() => ({ totalPages: total}))
   }))
 
 export { useStore }
