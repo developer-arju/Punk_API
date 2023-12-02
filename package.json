@@ -26,6 +26,7 @@
     "@progress/kendo-react-treeview": "^6.1.1",
     "@progress/kendo-svg-icons": "^2.0.0",
     "@progress/kendo-theme-default": "^7.0.2",
+    "framer-motion": "^10.16.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",

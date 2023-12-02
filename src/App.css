@@ -30,13 +30,14 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
 .heading {
     text-align: center;
-    color: #1877f3;
+    color: darkorange;
     font-size: 24px;
+    padding: 5px 0;
     font-family: "Oswald", sans-serif;
 }
 
@@ -105,4 +106,22 @@
     gap: 8px;
     align-items: center;
     max-height: min-content;
+  }
+
+  .page-btn {
+    padding: 4px 10px;
+    background: #b6d2da;
+    color: rgb(222, 12, 57);
+    border-radius: 5px;
+    border: 1px solid rgb(222, 12, 57);
+    cursor: pointer;
+  }
+
+  .page-btn:focus {
+    outline: none;
+  }
+
+  .page-btn:disabled {
+    color: rgb(222, 12, 57, 0.4);
+    border-color: rgb(222, 12, 57, 0.4);
   }
