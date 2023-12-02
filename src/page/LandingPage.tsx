@@ -3,8 +3,8 @@ import { useBeerQuery, useBearQueryWithPage } from "../hooks/api";
 import { useStore } from "../Store";
 import { PER_PAGE } from "../utils/Constants";
 import { GridLoader } from "react-spinners";
-import GridScreen from "../components/GridScreen";
 import { motion } from "framer-motion";
+import GridScreen from "../components/GridScreen";
 
 const LandingPage: FC = () => {
   const [filter, setFilter] = useState(false);

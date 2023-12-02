@@ -11,4 +11,5 @@
 * Zustand
 * react-query
 * cypress
-* react-spinners
+* framer-motion
+        Framer Motion is a simple yet powerful motion library for React. It helps to animate react elements with less code.
