@@ -9,6 +9,10 @@
     background: #313131;
 }
 
+p {
+  margin: 0;
+}
+
 .logo {
     width: 24px;
     height: 24px;
@@ -124,4 +128,104 @@
   .page-btn:disabled {
     color: rgb(222, 12, 57, 0.4);
     border-color: rgb(222, 12, 57, 0.4);
+  }
+
+  .members-btn {
+    font-size: 14px;
+    color: blue;
+    padding: 15px;
+    border: 1px solid gray;
+    background: gray;
+    border-radius: 15px;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.19);
+  }
+  .members-btn:focus {
+    outline: none;
+  }
+
+  .modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inside-modal {
+    min-width: 50%;
+    min-height: 400px;
+    background: whitesmoke;
+    z-index: 999;
+  }
+
+  .inside-modal > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .inside-modal > div > h2 {
+    margin: 12px 0;
+    color: red;
+    font-size: 16px;
+    font-weight: 800;
+    text-shadow: rgba(222, 12, 57,0.3);
+  }
+
+.inside-modal :nth-child(3) {
+  margin: auto;
+}
+
+  .inside-modal :nth-child(3) button{
+    box-sizing: border-box;
+    border: 2px solid cyan;
+    background: cyan;
+    padding: 6px 15px;
+    color: red;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .inside-modal :nth-child(3) button:focus{
+    outline: none;
+  }
+
+  .inside-modal :nth-child(2) > table {
+    width: 80%;
+    column-gap: 15px;
+  }
+ 
+  .inside-modal :nth-child(2) > table tbody tr td {
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: #313131;
+  }
+ 
+  .inside-modal :nth-child(2) > table tbody tr td:last-child{
+      text-align: left;
+  }
+  .inside-modal :nth-child(2) > table tbody tr td span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #313131;
+    margin-inline-end: 8px;
+  }
+
+  table thead > tr {
+    border-bottom: 2px dashed green;
+  }
+
+  .inside-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }

@@ -5,8 +5,10 @@ import { PER_PAGE } from "../utils/Constants";
 import { GridLoader } from "react-spinners";
 import { motion } from "framer-motion";
 import GridScreen from "../components/GridScreen";
+import BilledMembers from "../components/BilledMembers";
 
 const LandingPage: FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [filter, setFilter] = useState(false);
   const [currPage, setCurrPage] = useState(1);
   const { beers, totalPages, setBeers, setPageCount } = useStore();
@@ -38,6 +40,7 @@ const LandingPage: FC = () => {
 
   return (
     <div className="wrapper">
+      {/* Title */}
       <motion.div
         initial={{ x: "-50%", opacity: 0 }}
         animate={{
@@ -55,6 +58,9 @@ const LandingPage: FC = () => {
       >
         BEER SHOP
       </motion.div>
+      {/* /Title */}
+
+      {/* Filter */}
       <div className="filter-box">
         <p className="filter-label">Show beers ABV above 8</p>
         <input
@@ -71,6 +77,9 @@ const LandingPage: FC = () => {
           className="toggle-label"
         ></motion.label>
       </div>
+      {/* /Filter */}
+
+      {/* BEERS */}
       {isLoading ? (
         <div className="loader">
           <GridLoader color="blue" />
@@ -78,7 +87,9 @@ const LandingPage: FC = () => {
       ) : (
         <GridScreen data={beers} />
       )}
+      {/* /BEERS */}
 
+      {/* Pages */}
       <div className="pagination-box">
         <div style={filter ? { color: "green" } : { color: "blueviolet" }}>
           {filter ? "showing items ABV above 8" : "showing items ABV below 8"}
@@ -131,6 +142,17 @@ const LandingPage: FC = () => {
           </motion.button>
         </div>
       </div>
+      {/* /Pages */}
+
+      <button className="members-btn" onClick={() => setIsOpen(true)}>
+        Members Should Be Billed..!
+      </button>
+
+      {isOpen && (
+        <div className="modal">
+          <BilledMembers setIsOpen={setIsOpen} />
+        </div>
+      )}
     </div>
   );
 };
